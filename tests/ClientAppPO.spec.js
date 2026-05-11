@@ -1,9 +1,9 @@
- const {test, expect} = require('@playwright/test');
- const {customtest} = require('../utils/test-base');
-
- const {POManager} = require('../pageobjects/POManager');
+import {test, expect} from "@playwright/test";
+import POManager from '../pageobjects/POManager';
+import {customtest} from '../utils/test-base';
+import testData from '../utils/placeorderTestData.json' with {type: 'json'};
  //Json->string->js object
- const dataset =  JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
+ const dataset =  JSON.parse(JSON.stringify(testData));
 
  
 for(const data of dataset)

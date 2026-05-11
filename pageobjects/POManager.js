@@ -1,44 +1,37 @@
-const {LoginPage} = require('./LoginPage');
-const {DashboardPage} = require('./DashboardPage');
-const {OrdersHistoryPage} = require('./OrdersHistoryPage');
-const {OrdersReviewPage} = require('./OrdersReviewPage');
-const {CartPage} = require('./CartPage');
-class POManager
-{
-constructor(page)
-{
-    this.page = page;
-    this.loginPage = new LoginPage(this.page);
-    this.dashboardPage = new DashboardPage(this.page);
-    this.ordersHistoryPage = new OrdersHistoryPage(this.page);
-    this.ordersReviewPage = new OrdersReviewPage(this.page);
-    this.cartPage = new CartPage(this.page);
+import LoginPage from './LoginPage';
+import DashboardPage from './DashboardPage';
+import OrdersHistoryPage from './OrdersHistoryPage';
+import OrdersReviewPage from './OrdersReviewPage';
+import CartPage from './CartPage';
+class POManager {
+    constructor(page) {
+        this.page = page;
+        this.loginPage = new LoginPage(this.page);
+        this.dashboardPage = new DashboardPage(this.page);
+        this.ordersHistoryPage = new OrdersHistoryPage(this.page);
+        this.ordersReviewPage = new OrdersReviewPage(this.page);
+        this.cartPage = new CartPage(this.page);
 
 
-}
+    }
 
-getLoginPage()
-{
-    return this.loginPage;
-}
+    getLoginPage() {
+        return this.loginPage;
+    }
 
-getCartPage()
-{
-    return this.cartPage;
-}
+    getCartPage() {
+        return this.cartPage;
+    }
 
-getDashboardPage()
-{
-    return this.dashboardPage;
-}
-getOrdersHistoryPage()
-{
-    return this.ordersHistoryPage;
-}
+    getDashboardPage() {
+        return this.dashboardPage;
+    }
+    getOrdersHistoryPage() {
+        return this.ordersHistoryPage;
+    }
 
-getOrdersReviewPage()
-{
-    return this.ordersReviewPage;
+    getOrdersReviewPage() {
+        return this.ordersReviewPage;
+    }
 }
-}
-module.exports = {POManager};
+export default POManager;

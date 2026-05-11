@@ -35,14 +35,14 @@ test("Client App Register", async ({ page }) => {
 
   expect(await password.inputValue()).toBe(await confirmPassword.inputValue());
   const checkBox = page.locator("[type='checkbox']");
-  checkBox.check();
+  await checkBox.check();
 
   //   await page.pause();
   await page.locator("[type='submit']").click();
   //   await page.pause();
 });
 
-test.only("Client App Login", async ({ page }) => {
+test("Client App Login", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
 
   const email = page.locator("[type='email']");

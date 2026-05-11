@@ -1,7 +1,7 @@
-const { test, expect, request } = require('@playwright/test');
-const { APiUtils } = require('../utils/APiUtils');
-const loginPayLoad = { userEmail: "anshika@gmail.com", userPassword: "Iamking@000" };
-const orderPayLoad = { orders: [{ country: "India", productOrderedId: "6262e95ae26b7e1a10e89bf0" }] };
+import { test, expect, request } from "@playwright/test";
+import APiUtils from '../utils/APiUtils';
+const loginPayLoad = { userEmail: "jaibalayya@gmail.com", userPassword: "J@ibalayy1" };
+const orderPayLoad = { orders: [{ country: "India", productOrderedId: "6960eae1c941646b7a8b3ed3" }] };
 const fakePayLoadOrders = { data: [], message: "No Orders" };
 
 let response;
@@ -15,7 +15,7 @@ test.beforeAll(async () => {
 
 //create order is success
 test('@SP Place the order', async ({ page }) => {
-  page.addInitScript(value => {
+  await page.addInitScript(value => {
 
     window.localStorage.setItem('token', value);
   }, response.token);
@@ -29,7 +29,7 @@ test('@SP Place the order', async ({ page }) => {
       route.fulfill(
         {
           response,
-          body, 
+          body,
 
         });
       //intercepting response -APi response-> { playwright fakeresponse}->browser->render data on front end

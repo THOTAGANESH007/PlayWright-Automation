@@ -1,5 +1,4 @@
-const {test,expect} = require("@playwright/test");
-
+import {test,expect} from "@playwright/test";
 
 test("Calendar validations",async({page})=>
 {
@@ -18,7 +17,7 @@ test("Calendar validations",async({page})=>
     const inputs = await page.locator(".react-date-picker__inputGroup input");
     for (let index = 0; index <inputs.length; index++)
     {
-        const value =inputs[index].getAttribute("value");
+        const value =await inputs[index].getAttribute("value");
         expect(value).toEqual(expectedList[index]);
     }
 

@@ -1,15 +1,15 @@
 //Login UI  -> .json
 
 //test browser-> .json , cart-,order, orderdetails,orderhistory
-const { test, expect } = require('@playwright/test');
+import {test, expect} from "@playwright/test";
 let webContext;
 
 test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
-    await page.locator("#userEmail").fill("rahulshetty@gmail.com");
-    await page.locator("#userPassword").fill("Iamking@000");
+    await page.locator("#userEmail").fill("jaibalayya@gmail.com");
+    await page.locator("#userPassword").fill("J@ibalayy1");
     await page.locator("[value='Login']").click();
     await page.waitForLoadState('networkidle');
     await context.storageState({ path: 'state.json' });

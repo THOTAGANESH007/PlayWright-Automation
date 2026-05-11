@@ -1,5 +1,4 @@
- const {test, expect} = require('@playwright/test');
-
+import {test, expect} from "@playwright/test";
 
 
  //test.use({ browserName: 'webkit'});
@@ -18,7 +17,7 @@
       console.log(await page.title());
       //css 
      await userName.fill("rahulshetty");
-     await page.locator("[type='password']").fill("learning");
+     await page.locator("[type='password']").fill("Learning@830$3mK2");
      await signIn.click();
     console.log(await page.locator("[style*='block']").textContent());
     await expect(page.locator("[style*='block']")).toContainText('Incorrect');
@@ -64,7 +63,7 @@
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     const documentLink = page.locator("[href*='documents-request']");
 
-    const [newPage]=Promise.all(
+    const [newPage]=await Promise.all(
    [
       context.waitForEvent('page'),//listen for any new page pending,rejected,fulfilled
       documentLink.click(),
