@@ -81,7 +81,7 @@ test("UI Controls", async ({ page }) => {
   await signInBtn.click();
 });
 
-test.only("Child Window Handler", async ({ browser }) => {
+test("Child Window Handler", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
