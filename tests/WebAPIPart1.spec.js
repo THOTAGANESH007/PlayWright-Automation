@@ -36,9 +36,10 @@ test('@API Place the order', async ({ page }) => {
             break;
         }
     }
-    const orderIdDetails = await page.locator(".col-text").textContent();
-    //await page.pause();
-    expect(response.orderId.includes(orderIdDetails)).toBeTruthy();
+    // await page.pause();
+    // const orderIdDetails = await page.locator(".col-text").textContent();
+    const orderIdDetails = await page.locator(".col-text").first().textContent();
+    expect(response.orderId.includes(orderIdDetails?.trim())).toBeTruthy();
 
 });
 
