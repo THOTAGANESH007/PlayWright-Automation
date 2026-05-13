@@ -5,7 +5,7 @@ export default defineConfig({
 
   testMatch: '**/*.spec.js', // Pattern to find test files
 
-  timeout: 77 * 1000, // explicit timeout globally
+  timeout: 17 * 1000, // explicit timeout globally
 
   expect :{
     timeout : 5000, // timeout only for the expect (Assertions)

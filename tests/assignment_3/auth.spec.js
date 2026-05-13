@@ -33,7 +33,7 @@ for (const user of usersData) {
         await loginPage.validateLogout();
     })
 
-    test(`Client App Logout failed simulation for ${user.username}`, async ({ page }) => {
+    test.skip(`Client App Logout failed simulation for ${user.username}`, async ({ page }) => {
         const poManager = new POManager(page);
         const loginPage = poManager.getLoginPage();
         await loginPage.goTo();

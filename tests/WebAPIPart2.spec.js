@@ -22,7 +22,7 @@ test.beforeAll(async ({ browser }) => {
 
 test('@QA Client App login', async () => {
     //fail
-    const email = "rahulshetty@gmail.com";
+    const email = "jaibalayya@gmail.com";
     const productName = 'iphone 13 pro';
     const page = await webContext.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
@@ -42,7 +42,7 @@ test('@QA Client App login', async () => {
     const bool = await page.locator("h3:has-text('iphone 13 pro')").isVisible();
     expect(bool).toBeTruthy();
     await page.locator("text=Checkout").click();
-    await page.locator("[placeholder*='Country']").fill("ind", { delay: 100 });
+    await page.locator("[placeholder*='Country']").pressSequentially("ind", { delay: 100 });
     const dropdown = page.locator(".ta-results");
     await dropdown.waitFor();
     const optionsCount = await dropdown.locator("button").count();
