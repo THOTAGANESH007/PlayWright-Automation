@@ -17,6 +17,8 @@ export default defineConfig({
     // browserName:'firefox',
     // browserName:'webkit',
     headless:false, // runs in headed mode
+    trace:'retain-on-failure',
+    screenshot:'only-on-failure',
   }
 
 });
