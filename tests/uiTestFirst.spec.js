@@ -52,7 +52,8 @@ test("UI Controls", async ({ page }) => {
   const userName = page.locator("#username");
   const password = page.locator("[type='password']");
   const dropDownBtn = page.locator("select.form-control");
-  const checkBox = page.locator("#terms");
+  // const checkBox = page.locator("#terms");
+  const checkBox = page.getByRole('checkbox', { name: 'I Agree to the terms and' });
   // Change to user
   const selectUser = page.locator(".radiotextsty").last();
   const selectAdmin = page.locator(".radiotextsty").first();
@@ -69,11 +70,11 @@ test("UI Controls", async ({ page }) => {
   await selectOkay.click();
 
   //Assertion to check whether the user is selected or not
-  // await page.pause();
+  await page.pause();
   await expect(selectUser).toBeChecked();
 
   // await expect(selectAdmin).not.toBeChecked();
-  await checkBox.check();
+  await checkBox.click();
   await expect(checkBox).toBeChecked();
 
   await expect(blinkingText).toHaveAttribute("class", "blinkingText");

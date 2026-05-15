@@ -4,13 +4,14 @@ import { test, expect } from "@playwright/test";
 test('@Webst Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
    const email = "anshika@gmail.com";
-   const productName = 'ZARA COAT 3';
+   const productName = 'ADIDAS ORIGINAL';
    const products = page.locator(".card-body");
    await page.goto("https://rahulshettyacademy.com/client");
    await page.locator("#userEmail").fill(email);
    await page.locator("#userPassword").fill("Iamking@000");
    await page.locator("[value='Login']").click();
    // await page.waitForLoadState('networkidle');
+   await expect(page).toHaveURL("https://rahulshettyacademy.com/client/#/dashboard/dash");
    await page.locator(".card-body b").first();
    const titles = await page.locator(".card-body b").allTextContents();
    console.log(titles); 
@@ -24,16 +25,16 @@ test('@Webst Client App login', async ({ page }) => {
    }
 
    await page.locator("[routerlink*='cart']").click();
-   //await page.pause();
+   // await page.pause();
 
    await page.locator("div li").first().waitFor({state:"visible"});
-   const bool = await page.locator("h3:has-text('zara coat 3')").isVisible();
+   const bool = await page.locator(`h3:has-text('${productName}')`).isVisible();
    expect(bool).toBeTruthy();
    await page.locator("text=Checkout").click();
 
    await page.locator("[placeholder*='Country']").pressSequentially("ind");
    const dropdown = await page.locator(".ta-results");
-   // await dropdown.waitFor();
+   await dropdown.waitFor();
    const optionsCount = await dropdown.locator("button").count();
    for (let i = 0; i < optionsCount; ++i) {
       const text = await dropdown.locator("button").nth(i).textContent();
@@ -50,7 +51,7 @@ test('@Webst Client App login', async ({ page }) => {
    console.log(orderId);
 
    await page.locator("button[routerlink*='myorders']").click();
-   // await page.locator("tbody").waitFor();
+   await page.locator("tbody").waitFor();
    const rows = await page.locator("tbody tr");
 
 
@@ -61,7 +62,7 @@ test('@Webst Client App login', async ({ page }) => {
          break;
       }
    }
-   const orderIdDetails = await page.locator(".col-text").textContent();
+   const orderIdDetails = await page.locator(".col-text.-main").textContent();
    expect(orderId.includes(orderIdDetails)).toBeTruthy();
 
 });
