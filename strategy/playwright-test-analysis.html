@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playwright Test Analysis</title>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Playwright Test Analysis</h1>
+      <p class="note">Simple review of the Playwright testcases found in the current working directory, plus a short read of the latest Allure report.</p>
+      <div class="summary">
+        <div class="card"><div class="label">Total cases</div><div class="value">37</div></div>
+        <div class="card"><div class="label">Auto High ROI</div><div class="value high">15</div></div>
+        <div class="card"><div class="label">Auto Mid ROI</div><div class="value">19</div></div>
+        <div class="card"><div class="label">Manual</div><div class="value manual">3</div></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Report Result Analysis</h2>
+      <p class="small">The latest Allure summary for the auth flow suite shows 6 runs, 4 passed, and 2 skipped. In simple words, the main login and token flows are working, and the skipped items are intentional logout-failure simulations.</p>
+    </section>
+
+    <section>
+      <h2>Case Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Justification</th>
+            <th>Layer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Case ID">TC01</td><td data-label="Title">Client App Register</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Common form flow useful but not the highest-priority smoke</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC02</td><td data-label="Title">Client App Login</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Core login path stable and valuable to keep automated</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC03</td><td data-label="Title">Web client app login for ZARA COAT 3</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Main checkout flow with real product selection</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC04</td><td data-label="Title">Client App login with page objects</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Reusable page-object checkout flow good repeatable coverage</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC05</td><td data-label="Title">Successful Login</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Main login path high business value</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC06</td><td data-label="Title">Invalid Credentials</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Negative login check helpful but not a primary happy path</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC07</td><td data-label="Title">Locked User Access</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Good negative check but for a secondary app flow</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC08</td><td data-label="Title">Logout Functionality</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Logout is part of the core auth journey</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC09</td><td data-label="Title">Client App login and logout (assignment_3) for anshika@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Full auth flow for one real user</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC10</td><td data-label="Title">Client App login and logout using token (assignment_3) for anshika@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Fast token-based auth check strong automation value</td><td data-label="Layer">API/UI</td></tr>
+          <tr><td data-label="Case ID">TC11</td><td data-label="Title">Client App Logout failed simulation (assignment_3) for anshika@gmail.com</td><td data-label="Category">Manual</td><td data-label="Justification">Intentional failure simulation not a stable automation target</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC12</td><td data-label="Title">Client App login and logout (assignment_3) for jaibalayya@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Full auth flow for the second user</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC13</td><td data-label="Title">Client App login and logout using token (assignment_3) for jaibalayya@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Token login is fast and reliable</td><td data-label="Layer">API/UI</td></tr>
+          <tr><td data-label="Case ID">TC14</td><td data-label="Title">Client App Logout failed simulation (assignment_3) for jaibalayya@gmail.com</td><td data-label="Category">Manual</td><td data-label="Justification">Intentional failure simulation so it is not a normal green test</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC15</td><td data-label="Title">Client App login and logout (assignment/tests) for anshika@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Full auth flow same business value as the other auth suite</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC16</td><td data-label="Title">Client App login and logout using token (assignment/tests) for anshika@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">API-backed login keeps the test fast</td><td data-label="Layer">API/UI</td></tr>
+          <tr><td data-label="Case ID">TC17</td><td data-label="Title">Client App Logout failed simulation (assignment/tests) for anshika@gmail.com</td><td data-label="Category">Manual</td><td data-label="Justification">Deliberate broken case useful only as a failure demo</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC18</td><td data-label="Title">Client App login and logout (assignment/tests) for jaibalayya@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Full auth flow for the second user in this suite</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC19</td><td data-label="Title">Client App login and logout using token (assignment/tests) for jaibalayya@gmail.com</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Good fast check for the token path</td><td data-label="Layer">API/UI</td></tr>
+          <tr><td data-label="Case ID">TC20</td><td data-label="Title">Client App Logout failed simulation (assignment/tests) for jaibalayya@gmail.com</td><td data-label="Category">Manual</td><td data-label="Justification">Deliberate failure case not meant to stay automated</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC21</td><td data-label="Title">Calendar validations</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Useful UI date-picker check but not a top business path</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC22</td><td data-label="Title">Browser Context-Validating Error login</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Good browser-context smoke check with error handling</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC23</td><td data-label="Title">UI Controls</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">General control validation good support coverage</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC24</td><td data-label="Title">Child windows hadl</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Window-handling smoke check useful but not core business logic</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC25</td><td data-label="Title">First Browser Context PlayWright Test</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Basic browser-context smoke test</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC26</td><td data-label="Title">First Page Context PlayWright Test</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Basic login and page-context smoke test</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC27</td><td data-label="Title">UI Controls</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Another UI-controls check same type of support coverage</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC28</td><td data-label="Title">Child Window Handler</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Window-switching smoke check good for browser behavior</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC29</td><td data-label="Title">Place the order via API</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Core order-placement flow through API setup strong ROI</td><td data-label="Layer">API</td></tr>
+          <tr><td data-label="Case ID">TC30</td><td data-label="Title">Security request intercept</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Security-style route interception useful but specialized</td><td data-label="Layer">API</td></tr>
+          <tr><td data-label="Case ID">TC31</td><td data-label="Title">Popup validations</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Popups and iframe handling are good UI smoke checks</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC32</td><td data-label="Title">Screenshot &amp; Visual comparison</td><td data-label="Category">Manual</td><td data-label="Justification">Visual checks are subjective and can be flaky in automation</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC33</td><td data-label="Title">Visual snapshot</td><td data-label="Category">Manual</td><td data-label="Justification">Snapshot testing needs human review and can drift easily</td><td data-label="Layer">N/A</td></tr>
+          <tr><td data-label="Case ID">TC34</td><td data-label="Title">API place the order</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Fast order creation and order-history validation through API</td><td data-label="Layer">API</td></tr>
+          <tr><td data-label="Case ID">TC35</td><td data-label="Title">Client App login with API state</td><td data-label="Category">Auto (High ROI)</td><td data-label="Justification">Storage-state login plus cart order flow is valuable and fast</td><td data-label="Layer">API/UI</td></tr>
+          <tr><td data-label="Case ID">TC36</td><td data-label="Title">API Test case 2</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Smoke-level test but it is light on business assertions</td><td data-label="Layer">UI</td></tr>
+          <tr><td data-label="Case ID">TC37</td><td data-label="Title">Playwright Special locators</td><td data-label="Category">Auto (Mid ROI)</td><td data-label="Justification">Good locator-coverage smoke test for UI basics</td><td data-label="Layer">UI</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footer">Based on the test files in the current workspace and the latest Allure report summary.</div>
+  </div>
+</body>
+</html>

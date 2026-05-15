@@ -1,0 +1,38 @@
+Case ID,Title,Category,Justification,Layer
+TC01,Client App Register,Auto (Mid ROI),Common form flow useful but not the highest-priority smoke,UI
+TC02,Client App Login,Auto (High ROI),Core login path stable and valuable to keep automated,UI
+TC03,Web client app login for ZARA COAT 3,Auto (High ROI),Main checkout flow with real product selection,UI
+TC04,Client App login with page objects,Auto (High ROI),Reusable page-object checkout flow good repeatable coverage,UI
+TC05,Successful Login,Auto (High ROI),Main login path high business value,UI
+TC06,Invalid Credentials,Auto (Mid ROI),Negative login check helpful but not a primary happy path,UI
+TC07,Locked User Access,Auto (Mid ROI),Good negative check but for a secondary app flow,UI
+TC08,Logout Functionality,Auto (High ROI),Logout is part of the core auth journey,UI
+TC09,Client App login and logout (assignment_3) for anshika@gmail.com,Auto (High ROI),Full auth flow for one real user,UI
+TC10,Client App login and logout using token (assignment_3) for anshika@gmail.com,Auto (High ROI),Fast token-based auth check strong automation value,API/UI
+TC11,Client App Logout failed simulation (assignment_3) for anshika@gmail.com,Manual,Intentional failure simulation not a stable automation target,N/A
+TC12,Client App login and logout (assignment_3) for jaibalayya@gmail.com,Auto (High ROI),Full auth flow for the second user,UI
+TC13,Client App login and logout using token (assignment_3) for jaibalayya@gmail.com,Auto (High ROI),Token login is fast and reliable,API/UI
+TC14,Client App Logout failed simulation (assignment_3) for jaibalayya@gmail.com,Manual,Intentional failure simulation so it is not a normal green test,N/A
+TC15,Client App login and logout (assignment/tests) for anshika@gmail.com,Auto (High ROI),Full auth flow same business value as the other auth suite,UI
+TC16,Client App login and logout using token (assignment/tests) for anshika@gmail.com,Auto (High ROI),API-backed login keeps the test fast,API/UI
+TC17,Client App Logout failed simulation (assignment/tests) for anshika@gmail.com,Manual,Deliberate broken case useful only as a failure demo,N/A
+TC18,Client App login and logout (assignment/tests) for jaibalayya@gmail.com,Auto (High ROI),Full auth flow for the second user in this suite,UI
+TC19,Client App login and logout using token (assignment/tests) for jaibalayya@gmail.com,Auto (High ROI),Good fast check for the token path,API/UI
+TC20,Client App Logout failed simulation (assignment/tests) for jaibalayya@gmail.com,Manual,Deliberate failure case not meant to stay automated,N/A
+TC21,Calendar validations,Auto (Mid ROI),Useful UI date-picker check but not a top business path,UI
+TC22,Browser Context-Validating Error login,Auto (Mid ROI),Good browser-context smoke check with error handling,UI
+TC23,UI Controls,Auto (Mid ROI),General control validation good support coverage,UI
+TC24,Child windows hadl,Auto (Mid ROI),Window-handling smoke check useful but not core business logic,UI
+TC25,First Browser Context PlayWright Test,Auto (Mid ROI),Basic browser-context smoke test,UI
+TC26,First Page Context PlayWright Test,Auto (Mid ROI),Basic login and page-context smoke test,UI
+TC27,UI Controls,Auto (Mid ROI),Another UI-controls check same type of support coverage,UI
+TC28,Child Window Handler,Auto (Mid ROI),Window-switching smoke check good for browser behavior,UI
+TC29,Place the order via API,Auto (High ROI),Core order-placement flow through API setup strong ROI,API
+TC30,Security request intercept,Auto (Mid ROI),Security-style route interception useful but specialized,API
+TC31,Popup validations,Auto (Mid ROI),Popups and iframe handling are good UI smoke checks,UI
+TC32,Screenshot & Visual comparison,Manual,Visual checks are subjective and can be flaky in automation,N/A
+TC33,Visual snapshot,Manual,Snapshot testing needs human review and can drift easily,N/A
+TC34,API place the order,Auto (High ROI),Fast order creation and order-history validation through API,API
+TC35,Client App login with API state,Auto (High ROI),Storage-state login plus cart order flow is valuable and fast,API/UI
+TC36,API Test case 2,Auto (Mid ROI),Smoke-level test but it is light on business assertions,UI
+TC37,Playwright Special locators,Auto (Mid ROI),Good locator-coverage smoke test for UI basics,UI
