@@ -10,8 +10,8 @@ test('@Webst Client App login', async ({ page }) => {
    await page.locator("#userEmail").fill(email);
    await page.locator("#userPassword").fill("Iamking@000");
    await page.locator("[value='Login']").click();
-   await page.waitForLoadState('networkidle');
-   await page.locator(".card-body b").first().waitFor();
+   // await page.waitForLoadState('networkidle');
+   await page.locator(".card-body b").first();
    const titles = await page.locator(".card-body b").allTextContents();
    console.log(titles); 
    const count = await products.count();
@@ -26,14 +26,14 @@ test('@Webst Client App login', async ({ page }) => {
    await page.locator("[routerlink*='cart']").click();
    //await page.pause();
 
-   await page.locator("div li").first().waitFor();
+   // await page.locator("div li").first().waitFor();
    const bool = await page.locator("h3:has-text('zara coat 3')").isVisible();
    expect(bool).toBeTruthy();
    await page.locator("text=Checkout").click();
 
    await page.locator("[placeholder*='Country']").pressSequentially("ind");
-   const dropdown = page.locator(".ta-results");
-   await dropdown.waitFor();
+   const dropdown = await page.locator(".ta-results");
+   // await dropdown.waitFor();
    const optionsCount = await dropdown.locator("button").count();
    for (let i = 0; i < optionsCount; ++i) {
       const text = await dropdown.locator("button").nth(i).textContent();
@@ -50,7 +50,7 @@ test('@Webst Client App login', async ({ page }) => {
    console.log(orderId);
 
    await page.locator("button[routerlink*='myorders']").click();
-   await page.locator("tbody").waitFor();
+   // await page.locator("tbody").waitFor();
    const rows = await page.locator("tbody tr");
 
 
