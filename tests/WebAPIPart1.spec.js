@@ -37,9 +37,9 @@ test('@API Place the order', async ({ page }) => {
         }
     }
     // await page.pause();
-    const orderIdDetails = await page.locator(".col-text").textContent();
-    await expect(page.getByText('Order Id')).toBeVisible();
-    expect(response.orderId.includes(orderIdDetails)).toBeTruthy();
+    // const orderIdDetails = await page.locator(".col-text").textContent();
+    const orderIdDetailsVisibilityCheck = await page.getByText('Order Id').isVisible();
+    expect(response.orderId.includes(orderIdDetailsVisibilityCheck)).toBeTruthy();
 
 });
 
